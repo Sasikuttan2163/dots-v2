@@ -1,0 +1,172 @@
+/**
+ * @name midnight
+ * @description A dark, rounded discord theme.
+ * @author refact0r
+ * @version 1.6.2
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/midnight-discord
+ * @source https://github.com/refact0r/midnight-discord/blob/master/midnight.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+/* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
+
+@import url('https://refact0r.github.io/midnight-discord/midnight.css');
+
+/* customize things here */
+:root {
+	/* font, change to 'gg sans' for default discord font*/
+	--font: 'gg sans';
+
+	/* top left corner text */
+	--corner-text: 'Midnight';
+
+	--message-radius: 18px;
+	/* color of status indicators and window controls */
+	--online-indicator: var(--accent-2); /* change to #23a55a for default green */
+	--dnd-indicator: hsl(340, 60%, 60%); /* change to #f13f43 for default red */
+	--idle-indicator: hsl(50, 60%, 60%); /* change to #f0b232 for default yellow */
+	--streaming-indicator: hsl(260, 60%, 60%); /* change to #593695 for default purple */
+	--media-radius: calc(var(--message-radius) / 1.75);
+	/* accent colors */
+	--accent-1: {{colors.primary.default.hex}}; /* links */
+	--accent-2: {{colors.primary.default.hex | set_lightness: -10.0}}; /* general unread/mention elements */
+	--accent-3: {{colors.primary.default.hex | set_lightness: -20.0}}; /* accent buttons */
+	--accent-4: {{colors.primary.default.hex | set_lightness: -30.0}}; /* accent buttons when hovered */
+	--accent-5: {{colors.primary.default.hex | set_lightness: -40.0}}; /* accent buttons when clicked */
+	--mention: {{colors.background.default.hex | set_lightness: +10.0}}66; /* mentions & mention messages */
+	--mention-hover: {{colors.background.default.hex | set_lightness: +20.0}}; /* mentions & mention messages when hovered */
+
+	/* text colors */
+	--text-0: white; /* text on colored elements */
+	--text-1: var(--text-2); /* other normally white text */
+	--text-2: {{colors.primary_fixed.default.hex | set_lightness: +10.0}}; /* headings and important text */
+	--text-3: {{colors.primary_fixed.default.hex}}aa; /* normal text */
+	--text-4: {{colors.primary_fixed.default.hex | set_lightness: +10.0}}33; /* icon buttons and channels */
+	--text-5: {{colors.primary_fixed.default.hex | set_lightness: -10.0}}22; /* muted channels/chats and timestamps */
+
+	/* background and dark colors */
+	--bg-1: {{colors.background.default.hex | set_lightness: +10.0}}; /* dark buttons when clicked */
+	--bg-2: {{colors.background.default.hex | set_lightness: +5.0}}; /* dark buttons */
+	--bg-3: {{colors.background.default.hex | set_lightness: +1.5}}; /* spacing, secondary elements */
+	--bg-4: {{colors.background.default.hex}}; /* main background color */
+	--hover: {{colors.background.default.hex | set_lightness: -10.0}}; /* channels and buttons when hovered */
+	--active: {{colors.primary.default.hex | set_lightness: -20.0}}88; /* channels and buttons when clicked or selected */
+	--message-hover: hsla(220, 0%, 0%, 0.1); /* messages when hovered */
+
+	/* amount of spacing and padding */
+	--spacing: 12px;
+
+	/* animations */
+	/* ALL ANIMATIONS CAN BE DISABLED WITH REDUCED MOTION IN DISCORD SETTINGS */
+	--list-item-transition: 0.2s ease; /* channels/members/settings hover transition */
+	--unread-bar-transition: 0.2s ease; /* unread bar moving into view transition */
+	--moon-spin-transition: 0.4s ease; /* moon icon spin */
+	--icon-spin-transition: 1s ease; /* round icon button spin (settings, emoji, etc.) */
+
+	/* corner roundness (border-radius) */
+	--roundness-xl: 22px; /* roundness of big panel outer corners */
+	--roundness-l: 20px; /* popout panels */
+	--roundness-m: 16px; /* smaller panels, images, embeds */
+	--roundness-s: 12px; /* members, settings inputs */
+	--roundness-xs: 10px; /* channels, buttons */
+	--roundness-xxs: 8px; /* searchbar, small elements */
+
+	/* direct messages moon icon */
+	/* change to block to show, none to hide */
+	--discord-icon: none; /* discord icon */
+	--moon-icon: block; /* moon icon */
+	--moon-icon-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg'); /* custom icon url */
+	--moon-icon-size: auto;
+
+	/* filter uncolorable elements to fit theme */
+	/* (just set to none, they're too much work to configure) */
+	--login-bg-filter: saturate(0.3) hue-rotate(-15deg) brightness(0.4); /* login background artwork */
+	--green-to-accent-3-filter: hue-rotate(56deg) saturate(1.43); /* add friend page explore icon */
+	--blurple-to-accent-3-filter: hue-rotate(304deg) saturate(0.84) brightness(1.2); /* add friend page school icon */
+}
+.searchResult_ddc613 .wrapper_ec86aa {
+	margin: 0 8px 0 60px !important;
+	padding: 12px !important;
+	border-radius: var(--message-radius);
+}
+.embedCard_c6cefd {
+	border-radius: var(--message-radius);
+}
+.backgroundFlash_d5deea {
+	border-radius: var(--message-radius);
+}
+[style].backgroundFlash_d5deea:before {
+	position: absolute;
+	content: " ";
+	width: calc(100% - 78px);
+	height: 100%;
+	top: 0;
+	left: 68px;
+	border-radius: var(--message-radius);
+	pointer-events: none;
+	z-index: 2;
+	transition: 200ms ease-out background-color;
+}
+.wrapper_ec86aa.groupStart_d5deea {
+	position: relative;
+	border-radius: var(--message-radius);
+}
+.wrapper_ec86aa:not(.groupStart_d5deea) {
+	border-radius: 0 0 var(--message-radius) var(--message-radius);
+}
+.wrapper_ec86aa:not(.groupStart_d5deea):before, .wrapper_ec86aa:not(.groupStart_d5deea):after {
+	content: " ";
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: calc(var(--message-radius) / 1.875 * -1);
+	border: calc(var(--message-radius) / 3.75) solid transparent;
+}
+.cozy_ec86aa:not(.message_d5deea) {
+	margin: 16px 10px 0 68px;
+	border-radius: var(--message-radius);
+}
+.mentioned_d5deea .messageContent_ec86aa {
+	position: relative;
+	border-radius: calc(var(--message-radius) / 1.4);
+}
+.chatPreview_c5828f .wrapper_ec86aa {
+	margin-top: 0;
+	margin-left: 46px;
+	border-radius: var(--message-radius);
+}
+.messagesPopout_ac90a2 .messageGroupWrapper_ac90a2 .wrapper_ec86aa {
+	margin: 0 0 0 50px;
+	padding: var(--message-padding-top) var(--message-padding-side) !important;
+	background-color: var(--message-color-alt) !important;
+	border-radius: var(--message-radius);
+}
+.channelHeader_f3978e {
+	padding: 12px 16px;
+	border-radius: var(--message-radius) var(--message-radius) 0 0;
+}
+.container_ddb5b4 .messageContainer_ddb5b4 {
+	margin-left: 0;
+	border-radius: 0 0 var(--message-radius) var(--message-radius);
+}
+.container_ddb5b4 .messageContainer_ddb5b4 .wrapper_ec86aa.cozy_ec86aa {
+	margin: 0 0 0 66px;
+	border-radius: var(--message-radius);
+	overflow: visible;
+}
+.channel_d09ffd .channelHeader_f3978e:only-child {
+	border-radius: var(--message-radius);
+	border-bottom: none;
+}
+.messages_c06487 {
+	padding: 16px;
+	border-radius: 0 0 var(--message-radius) var(--message-radius);
+}
+.previewMessage_c31d36 .message_d5deea {
+	margin-top: 0 !important;
+	margin-left: 52px;
+	margin-right: 0;
+	border-radius: var(--message-radius);
+}

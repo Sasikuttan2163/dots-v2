@@ -1,0 +1,24 @@
+# config_directory/config.toml
+[config]
+reload_apps = true
+set_wallpaper = false
+wallpaper_tool = 'Swww'
+prefix = '@'
+swww_options = [
+    "--transition-type",
+    "center",
+]
+run_after = [
+    [ "echo", "'hello'" ],
+    [ "echo", "'hello again'" ],
+]
+
+[config.reload_apps_list]
+waybar = true
+kitty = true
+gtk_theme = true
+dunst = true
+[templates] 
+kitty = { input_path = '~/.config/matugen/templates/kittycolors.conf', output_path = '~/.config/kitty/colors.conf' }
+vesktop = { input_path = '~/.config/matugen/templates/discord.css', output_path = '/home/sasikuttan2163/.var/app/dev.vencord.Vesktop/config/vesktop/themes/colors.css'}
+hyprland = { input_path = '~/.config/matugen/templates/hyprland.conf', output_path = '~/.config/hypr/colors.conf' }
